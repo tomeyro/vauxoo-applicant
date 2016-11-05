@@ -12,7 +12,7 @@ class CalculatorClass(object):
         """
         Sum a list of numbers and return the result
         """
-        sum = 0
-        for i in num_list:
-            sum += i
-        return sum
+        result = 0
+        for num in num_list:
+            result += num
+        return result
