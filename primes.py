@@ -12,7 +12,7 @@ class PrimeClass(object):
         """
         Returns if a given integer is a prime number
         """
-        if not isinstance(num_int, (int, long)) or num_int <= 1:
+        if num_int <= 1:
             return False
         else:
             for i in range(2, num_int):
