@@ -15,7 +15,8 @@ CREATE TABLE employee (
   id integer PRIMARY KEY,
   first_name varchar(255),
   last_name varchar(255),
-  department_id integer REFERENCES employee_department (id)
+  department_id integer REFERENCES employee_department (id),
+  boss_id integer REFERENCES employee (id)
 );
 
 -- Populating departments table
@@ -25,9 +26,9 @@ INSERT INTO employee_department (id, name, description) VALUES
 (5, 'HR', 'HR department'), (6, 'IT', 'IT department');
 
 -- Populating employees table
-INSERT INTO employee (id, first_name, last_name, department_id) VALUES
-(1, 'Tomas', 'Alvarez', 6), (2, 'Alicia', 'Fuenmayor', 2),
-(3, 'Zadquiel', 'Barros', 4), (4, 'Michelle', 'Barros', 5);
+INSERT INTO employee (id, first_name, last_name, department_id, boss_id) VALUES
+(1, 'Tomas', 'Alvarez', 6, 4), (2, 'Alicia', 'Fuenmayor', 2, 3),
+(3, 'Zadquiel', 'Barros', 4, 1), (4, 'Michelle', 'Barros', 5, 2);
 
 -- Creating hobbies table
 CREATE TABLE employee_hobby (
